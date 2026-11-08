@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.ImageView?>
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kelas.controller.FormController" stylesheets="@styles/app.css">
+    <top>
+        <HBox spacing="16" styleClass="header">
+            <Label text="TokoApps - Tambah Produk" styleClass="title"/>
+            <Button text="Lihat Daftar" onAction="#bukaDaftar"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true">
+            <content>
+                <VBox spacing="16" styleClass="page">
+                    <VBox spacing="12" styleClass="card">
+                        <Label text="Buat produk baru" styleClass="subtitle"/>
+                        <Label text="Nama produk"/>
+                        <TextField fx:id="namaField" promptText="Contoh: Nasi Goreng"/>
+                        <Label text="Kategori"/>
+                        <ComboBox fx:id="kategoriBox" maxWidth="Infinity"/>
+                        <Label text="Harga produk (Rp)"/>
+                        <TextField fx:id="hargaField" promptText="Contoh: 15000"/>
+                        <Label text="Foto produk (opsional)"/>
+                        <ImageView fx:id="gambarView" fitWidth="280" fitHeight="160" preserveRatio="true"/>
+                        <HBox spacing="10">
+                            <Button text="Pilih Foto" onAction="#pilihGambar"/>
+                            <Button text="Hapus Foto" onAction="#hapusGambar"/>
+                        </HBox>
+                        <Label text="Foto boleh dikosongkan (PNG atau JPEG, maksimal 5 MB). File lokal, bukan upload ke server." wrapText="true" styleClass="muted"/>
+                        <Label text="Kode produk dibuat otomatis (PR001, PR002, ...)" styleClass="muted" wrapText="true"/>
+                        <Button text="Simpan Produk" onAction="#simpan" styleClass="button-primary" maxWidth="Infinity"/>
+                        <Label fx:id="pesanLabel" wrapText="true" styleClass="error"/>
+                    </VBox>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+</BorderPane>
